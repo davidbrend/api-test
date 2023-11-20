@@ -1,0 +1,42 @@
+parameters:
+    db:
+        driver: pgsql
+        host: host.docker.internal
+        port: 5432
+        dbname: mydatabase
+        user: myuser
+        pass: mypassword
+
+application:
+	errorPresenter: Error
+	mapping:
+		*: App\Presenters\*Presenter
+
+search:
+    factories:
+        in: %appDir%
+        files:
+            - *Factory.php
+    services:
+        in: %appDir%
+        files:
+            - *Service.php
+    facades:
+        in: %appDir%
+        files:
+            - *Facade.php
+
+session:
+	expiration: 14 days
+
+extensions:
+    console: Contributte\Console\DI\ConsoleExtension(%consoleMode%)
+
+di:
+	export:
+		parameters: no
+		tags: no
+
+includes:
+    - doctrine.neon
+    - api.neon
