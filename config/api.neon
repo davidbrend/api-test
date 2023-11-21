@@ -46,8 +46,9 @@ api:
 
 services:
     middleware.cors:
-        factory: App\Api\Middlewares\CORSMiddleware
-        tags: [middleware: [priority: 200]]
-    decorator.request.authentication:
-        class: App\Api\Decorators\AuthenticationDecorator
-        tags: [apitte.core.decorator: [priority: 1, type: handler.before]]
+        m1:
+            factory: App\Api\Middlewares\CORSMiddleware
+            tags: [middleware: [priority: 200]]
+        m2:
+            class: App\Api\Middlewares\AuthenticationMiddleware
+            tags: [middleware: [priority: 1]]

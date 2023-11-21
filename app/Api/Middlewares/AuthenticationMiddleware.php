@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Api\Decorators;
+namespace App\Api\Middlewares;
 
-use Apitte\Core\Decorator\IRequestDecorator;
+use Contributte\Middlewares\IMiddleware;
 use Apitte\Core\Exception\Api\ClientErrorException;
 use Apitte\Core\Http\ApiRequest;
 use Apitte\Core\Http\ApiResponse;
 use Apitte\Core\Http\RequestAttributes;
 
-class AuthenticationDecorator implements IRequestDecorator
+class AuthenticationMiddleware implements IMiddleware
 {
     public function decorateRequest(ApiRequest $request, ApiResponse $response): ApiRequest
     {

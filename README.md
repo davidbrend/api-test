@@ -11,8 +11,6 @@ This project is a REST API built with Apitte, Docker, PHP 8.1, and Nette 3.1.
 
 ## Setup Instructions
 
-*If folder name log does not exist, please create it to make project work properly.*
-
 1. Clone the repository
 
 2. Navigate into the cloned directory and start the project with Docker:
